@@ -18,12 +18,21 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 20px;
+    height: 15%;
     background: #34b399;
     width: 100%;
   }
+
+  .sticker .title {
+    position: absolute;
+    top: 1px;
+    left: 20px;
+    height: 10%;
+    width: 60%;
+    resize: none;
+  }
   
-  .sticker textarea {
+  .sticker .mainText {
     padding: 3px 10px;
     box-sizing: border-box;
     min-height: 100px;

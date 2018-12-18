@@ -52,7 +52,8 @@
     createNote = function () {
       var stickerEl = document.createElement('div'),
           barEl = document.createElement('div'),
-          textareaEl = document.createElement('textarea');
+          textareaEl = document.createElement('textarea'),
+          textareaTitle = document.createElement('textarea');
       
       var transformCSSValue = "translateX(" + Math.random() * 400 + "px) translateY(" + Math.random() * 400 + "px)";
       
@@ -60,8 +61,11 @@
       
       barEl.classList.add('bar');
       stickerEl.classList.add('sticker');
+      textareaEl.classList.add('mainText');
+      textareaTitle.classList.add('title');
       
       stickerEl.appendChild(barEl);
+      stickerEl.appendChild(textareaTitle);
       stickerEl.appendChild(textareaEl); 
       
       stickerEl.addEventListener('mousedown', onDragStart, false);
