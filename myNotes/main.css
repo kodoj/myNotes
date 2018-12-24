@@ -1,5 +1,5 @@
 body {
-    background: #696e9e;
+    background: #702632;
   }
   
   .sticker {
@@ -10,7 +10,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    border: 1px solid #34b399;
+    border: 1px solid #080705;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
   }
   
@@ -19,7 +19,7 @@ body {
     top: 0;
     left: 0;
     height: 15%;
-    background: #34b399;
+    background: #080705;
     width: 100%;
   }
 
@@ -33,6 +33,8 @@ body {
   }
   
   .sticker .mainText {
+    position: absolute;
+    height: 100%;
     padding: 3px 10px;
     box-sizing: border-box;
     min-height: 100px;
@@ -40,10 +42,20 @@ body {
     background: transparent;
     border: none;
   }
+
+  .deleteButton {
+    background-image: url('trash2.png');
+    border: none;
+    position: absolute;
+    top: 2px;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
   
   .sticker .bar:hover {
     cursor: move;
-    background: #4bd0b5;
+    background: #40434E;
   }
   
   .sticker:hover {
