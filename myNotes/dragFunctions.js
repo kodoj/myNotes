@@ -25,14 +25,14 @@ const onDrag = function (ev) {
         posY = ev.clientY + grabPointY;
     
     if (posX < 0) {
-    posX = 0;
+        posX = 0;
     }
     
     if (posY < 0) {
     posY = 0;
     }
     
-    draggedEl.style.transform = "translateX("+ posX + "px) translateY(" + posY + "px)"; //template strings
+    draggedEl.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
 };
 
 const onDragEnd = function () { 

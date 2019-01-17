@@ -28,20 +28,18 @@ const onAddNoteBtnClick = function () {
 
 
 const createNote = function (options) {
-    let stickerEl = document.createElement('div'),
-        barEl = document.createElement('div'),
-        deleteBtnEl = document.createElement('button'),
-        textareaEl = document.createElement('textarea'),
-        textareaTitle = document.createElement('textarea'),
-        BOUNDARIES = 400,
-        noteConfig = options || {
-        transformCSSValue: "translateX(" + Math.random() * BOUNDARIES + "px) translateY(" + Math.random() * BOUNDARIES + "px)",
+    const stickerEl = document.createElement('div');
+    const barEl = document.createElement('div');
+    const deleteBtnEl = document.createElement('button');
+    let textareaEl = document.createElement('textarea');
+    let textareaTitle = document.createElement('textarea');
+    let BOUNDARIES = 400;
+    let noteConfig = options || {
+        transformCSSValue: `translateX(${Math.random() * BOUNDARIES}px) translateY(${Math.random() * BOUNDARIES}px)`,
         content: '',
         title: '',
-        id: "sticker_" + new Date().getTime(),
-        },
-        onSave,
-        onDelete;
+        id: `sticker_${new Date().getTime()}`,
+    };
     
     if (noteConfig.textarea) {
     textareaEl.style.width = noteConfig.textarea.width;
@@ -49,11 +47,11 @@ const createNote = function (options) {
     textareaEl.style.resize = 'none';
     }
 
-    onSave = function() {
+    const onSave = function() {
         saveNote(getNoteObject(stickerEl));
     };
     
-    onDelete = function() {
+    const onDelete = function() {
         deleteNote(getNoteObject(stickerEl));
     
         document.body.removeChild(stickerEl);
@@ -78,7 +76,7 @@ const createNote = function (options) {
     stickerEl.appendChild(textareaTitle); 
     
     stickerEl.addEventListener("mousedown", onDragStart, false);
-    stickerEl.addEventListener('focusout', onSave, false);
+    stickerEl.addEventListener("keyup", onSave, false);
     
     document.body.appendChild(stickerEl);
 };
